@@ -86,7 +86,7 @@ void GameData::InitGame(HWND hwnd, UINT y_size, UINT x_size, UINT number_mines)
 		{
 			for (int j = 0; j < minefield_x_size; j++)
 			{
-				if (rand() % 1000 <= mine_count && starting_mines_count > 0) {
+				if (rand() % 1000 <= mine_count && starting_mines_count > 0&& minefield[i][j].neighbours!= -1) {
 					minefield[i][j].neighbours = -1;
 					GameData::mine_count++;
 					starting_mines_count--;
@@ -94,7 +94,6 @@ void GameData::InitGame(HWND hwnd, UINT y_size, UINT x_size, UINT number_mines)
 				}
 			}
 		}
-
 	}
 	starting_mines_count = mine_count;
 	for (int i = 0; i < GameData::minefield_y_size; i++)
@@ -102,28 +101,13 @@ void GameData::InitGame(HWND hwnd, UINT y_size, UINT x_size, UINT number_mines)
 		for (int j = 0; j < GameData::minefield_x_size; j++)
 		{
 			//Count mines nearby
-			INT n = 0;
 			if (minefield[i][j].neighbours >= 0) {
-				if (i >= 1)
-				{
-					if (j >= 1)
-						n += minefield[i - 1][j - 1].neighbours == -1;
-					n += minefield[i - 1][j].neighbours == -1;
-					if (j < GameData::minefield_x_size - 1)
-						n += minefield[i - 1][j + 1].neighbours == -1;
-				}
-				if (j >= 1)
-					n += minefield[i][j - 1].neighbours == -1;
-				if (j < GameData::minefield_x_size - 1)
-					n += minefield[i][j + 1].neighbours == -1;
-
-				if (i < GameData::minefield_y_size - 1)
-				{
-					if (j >= 1)
-						n += minefield[i + 1][j - 1].neighbours == -1;
-					n += minefield[i + 1][j].neighbours == -1;
-					if (j < GameData::minefield_x_size - 1)
-						n += minefield[i + 1][j + 1].neighbours == -1;
+				INT n = 0;
+				for (int m = 0; m < 8; m++) {
+					if (minefield[i][j].neighbours_list[m] &&
+						minefield[i][j].neighbours_list[m]->neighbours == -1) {
+						n++;
+					}
 				}
 				minefield[i][j].neighbours = n;
 			}
