@@ -1,0 +1,185 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include <winres.h>
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Polski (Polska) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PLK)
+LANGUAGE LANG_POLISH, SUBLANG_DEFAULT
+#pragma code_page(1250)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Font
+//
+
+IDR_FONT3               FONT                    "fonts\\Segment7Standard.otf"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU2 MENU
+BEGIN
+    POPUP "Game"
+    BEGIN
+        MENUITEM "New game\tF2",                ID_GAME_NEWGAME
+        MENUITEM "Quit\tAlt+F4",                ID_GAME_EXIT
+    END
+    POPUP "Difficulty"
+    BEGIN
+        MENUITEM "Easy (8x8)\tCtrl+1",          ID_DIFFICULTY_EASY
+        MENUITEM "Medium (16x16)\tCtrl+2",      ID_DIFFICULTY_MEDIUM
+        MENUITEM "Expert (30x16)\tCtrl+3",      ID_DIFFICULTY_EXPERT
+        MENUITEM "Synak (40x20)\t Ctrl+4",      ID_DIFFICULTY_SYNAK
+        MENUITEM SEPARATOR
+        MENUITEM "Custom...",                   ID_DIFFICULTY_CUSTOM
+    END
+    POPUP "About"
+    BEGIN
+        MENUITEM "Info",                        ID_ABOUT_INFO
+        MENUITEM "Help\tF1",                    ID_ABOUT_HELP
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS
+BEGIN
+    "1",            ID_DIFFICULTY_EASY,     VIRTKEY, CONTROL, NOINVERT
+    "3",            ID_DIFFICULTY_EXPERT,   VIRTKEY, CONTROL, NOINVERT
+    "2",            ID_DIFFICULTY_MEDIUM,   VIRTKEY, CONTROL, NOINVERT
+    "4",            ID_DIFFICULTY_SYNAK,    VIRTKEY, CONTROL, NOINVERT
+    VK_F4,          ID_GAME_EXIT,           VIRTKEY, ALT, NOINVERT
+    VK_F2,          ID_GAME_NEWGAME,        VIRTKEY, NOINVERT
+    VK_F1,          ID_ABOUT_HELP,          VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 219, 149
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Custom settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,108,128,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,161,128,50,14
+    EDITTEXT        IDC_EDIT4,12,31,63,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,75,31,11,14
+    EDITTEXT        IDC_EDIT5,12,62,63,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,75,62,11,14
+    EDITTEXT        IDC_EDIT6,12,94,63,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,75,94,11,14
+    LTEXT           "Minefield width",IDC_STATIC,12,22,48,8
+    LTEXT           "Minefield height",IDC_STATIC,12,52,51,8
+    LTEXT           "Number of mines",IDC_STATIC,12,84,54,8
+END
+
+IDD_DIALOG2 DIALOGEX 0, 0, 249, 112
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Info"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,192,91,50,14
+    LTEXT           "Third-party assets:\nThe ""Segment7"" font is used under the SIL OFL v1.1 License. Copyright (C) Cedric Knight 2014. ",IDC_STATIC,7,62,175,32
+    LTEXT           "Minesweeper v1.0\nCopyright (C) 2026 Ryszard Piero¿yñski\n\nLicensed under the MIT License. \nThis software is provided ""as is"" without any warranty.\nUse at your own risk.",IDC_STATIC,7,7,175,55
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 12
+        RIGHTMARGIN, 211
+        TOPMARGIN, 22
+        BOTTOMMARGIN, 142
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 242
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 105
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include <winres.h>\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG2 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // Polski (Polska) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
